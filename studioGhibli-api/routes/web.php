@@ -13,27 +13,12 @@
 |
 */
 
-
-//matches localhost:8888/lumen/public/
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/books', 'BookController@getAll');
-$router->get('/books/{id}', 'BookController@getOne');
-$router->post('/books/add', 'BookController@save');
-$router->post('/books/edit/{id}', 'BookController@update');
-$router->delete('/books/delete/{id}', 'BookController@delete');
-
-
-
-
-
-
-
-
-
-
-
-
-
+$router->get('/movies', 'MovieController@getAll');
+$router->get('/movies/{id}', 'MovieController@getOne');
+$router->post('/movies/add', 'MovieController@save');
+$router->post('/movies/edit/{id}', 'MovieController@update');
+$router->delete('/movies/delete/{id}', 'MovieController@delete');
