@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Book extends Model
+class Movie extends Model
 {
      /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['title','author_id','published_date','book_image'];
+    protected $fillable = ['title', 'original_title', 'movie_banner', 'ghibli-movie-id'];
 
     /**
      * The attributes excluded from the model's JSON form.
