@@ -4,11 +4,11 @@ The following project contains a simple web application that fetches and display
 
 # Studio Ghibli simple web app
 
-Welcome to the repository of Studio Ghibli API, a developing of a web application where back-end and front-end matches to build a guide through Hayao Miyazaki's creations and relevant data of each movie.
+Welcome to the repository of Studio Ghibli API, a web application development where back-end and front-end matches to build a guide through Hayao Miyazaki's creations and relevant data of each movie.
 
 ## Project Overview
 
-Welcome to the repository of Studio Ghibli API, a developing of a web application where back-end and front-end matches to build a guide through Hayao Miyazaki's creations and relevant data of each movie.
+Welcome to the repository of Studio Ghibli API, a web application development where back-end and front-end matches to build a guide through Hayao Miyazaki's creations and relevant data of each movie.
 
 ### Key Features:
 
@@ -18,6 +18,7 @@ Welcome to the repository of Studio Ghibli API, a developing of a web applicatio
 
 - **HTML5 & SASS**: For structuring and styling the website, providing a solid foundation for the responsive design.
 - **JavaScript (ES6+)**: For dynamic content generation and interactive features.
+- **Vue.js**
 - **Lumen PHP**:
 - **Git**: For version control, showcasing best practices in code management and collaboration.
 
