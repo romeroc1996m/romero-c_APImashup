@@ -29,7 +29,7 @@ class MovieController extends Controller {
             'title' => 'required',
             'original_title' => 'required',
             'movie_banner' => 'required',
-            'ghibli-movie-id' => 'required'
+            'ghibli_movie_id' => 'required'
         ]);
         $movie = Movie::create($request->all());
         return response()->json($movie, 201);
@@ -42,7 +42,7 @@ class MovieController extends Controller {
             'title' => 'required',
             'original_title' => 'required',
             'movie_banner' => 'required',
-            'ghibli-movie-id' => 'required'
+            'ghibli_movie_id' => 'required'
         ]);
         $movie->update($request->all());
         return response()->json($movie);

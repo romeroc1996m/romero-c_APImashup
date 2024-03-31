@@ -15,32 +15,42 @@
 
 <body>
     <div class="grid-con">
-        <h1>Studio Ghibli’s Top Five Movie</h1>
-        <p>Welcome to Studio Ghibli’s Top Five Movie website!</p>
-        <p>Dive into the magical realm of Studio Ghibli as we celebrate our top five masterpieces, each brimming with creativity, emotion, and imagination. Join us on a journey through animated wonders that have captured hearts worldwide, and discover why Studio Ghibli continues to inspire generations.</p>
-        <p>Get ready to embark on an adventure beyond imagination!</p>
+        <h1 class="col-span-full">Studio Ghibli’s Top Five Movie</h1>
+        <p class="col-span-full">Welcome to Studio Ghibli’s Top Five Movie website!</p>
+        <p class="col-span-full">Dive into the magical realm of Studio Ghibli as we celebrate our top five masterpieces, each brimming with creativity, emotion, and imagination. Join us on a journey through animated wonders that have captured hearts worldwide, and discover why Studio Ghibli continues to inspire generations.</p>
+        <p class="col-span-full">Get ready to embark on an adventure beyond imagination!</p>
     </div>
-    <div class="grid-con" id="app">
-        <div class="col-span-full">
-            
-            <ul id="book-list">
-                <!-- thumbnail to be added by students, v-bind directive -->
-                <li v-for="book in booksData">
-                    <h3>Title: <a href="#book" @click="getBook(book.title)">{{book.title}}</a>
-                    </h3>
-                    <h4>Published: {{book.published_date}}</h4>
-                </li>
-            </ul>
-        </div>
-        <div class="col-span-full" id="bookInfoCon">
-            <div v-if="error">{{error}}</div>
-            <div id="book" v-if="!error">
-                <p>Author: {{authorName}}</p>
-                <p>Number of Pages: {{numberofPages}}</p>
-                <p>Rating: {{ratingsAverage}}</p>
-                <p>First Sentence: {{firstSentence}}</p>
+    <div id="app">
+        <div v-if="isLoading" v-html="spinner"></div>
+        <div v-else class="grid-con movie-container" v-for="movie in ghibliData" :key="movie.ghibli_movie_id">
+            <div v-if="error">{{ error }}</div>
+            <div class="col-span-full">
+                <img :src="`images/${movie.movie_banner}`" :alt="movie.title">
             </div>
-
+            <div class="col-span-full m-col-start-2 m-col-end-10">
+                <p>{{ movie.title }}</p>
+                <p>{{ movie.original_title }}</p>
+            </div>
+            <div class="col-span-full m-col-start-10 m-col-end-12">
+                <a href="#movie-detail" @click="getMovie(movie.ghibli_movie_id); selectedMovieId = movie.ghibli_movie_id">Learn More</a>
+            </div>
+            <div v-if="selectedMovieId === movie.ghibli_movie_id" class="col-span-full" id="movie-detail">    
+                <div v-if="error">{{ error }}</div>
+                <div class="grid-con" v-if="!error">
+                    <div class="m-col-start-1 m-col-end-8">
+                        <p>{{ movieDesc }}</p>                 
+                        <p>Director: {{ directorName }}</p>
+                        <p>Producer: {{ producerName }}</p>                   
+                        <p>Release Date: {{ releaseDate }}</p>
+                        <p>Running Time: {{ runningTime }}</p>
+                        <p>Rating Score: {{ ratingScore }}</p>
+                    </div>
+                    <div class="m-col-start-9 m-col-end-12">
+                        <img :src="movieImage" :alt="movie.title">
+                    </div>  
+                    
+                </div>
+            </div>
         </div>
     </div>
 </body>
