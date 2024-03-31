@@ -4,5 +4,5 @@ Homestead.json
 Homestead.yaml
 .env
 .phpunit.result.cache
-*.sql
-.DS_Store
+studioghibli.sql
+**/.DS_Store

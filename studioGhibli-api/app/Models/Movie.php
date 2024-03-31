@@ -11,7 +11,7 @@ class Movie extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'original_title', 'movie_banner', 'ghibli-movie-id'];
+    protected $fillable = ['title', 'original_title', 'movie_banner', 'ghibli_movie_id'];
 
     /**
      * The attributes excluded from the model's JSON form.
