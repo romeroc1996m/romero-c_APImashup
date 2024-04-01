@@ -1,17 +1,9 @@
+@use '../abstracts' as a;
+@use '../abstracts/mixins' as m;
+
 body {
-	font-family: "Lato", sans-serif;
-	padding: 20px;
+	font-family: a.$body-font-family;
+	background-color: #000000;
+	color:  #ffffff;
 }
 
-#app {
-	padding: 20px;
-}
-
-#bookInfoCon {
-	margin-top: 40px;
-}
-
-a {
-	color:crimson;
-	text-decoration: none;
-}
